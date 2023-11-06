@@ -18,6 +18,7 @@ Welcome to the Collaborative Jamming Scheduler (CJS) API service! Crafted with p
 ## How to Use the API Service
 
 ### Using FastAPI Docs
+[click the API Service Docs here](http://tubestst-1-marvel-18221058.hzdnejc5csbscye0.southeastasia.azurecontainer.io/docs#/)
 
 #### Read Operations
 - Navigate to the CJS API Documentation.
