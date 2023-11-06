@@ -1,4 +1,3 @@
-
 # 🎵Collaborative Jamming Scheduler (CJS) API Service
 ## Table of Contents
 - [Introduction](#introduction)
