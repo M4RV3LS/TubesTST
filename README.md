@@ -1,5 +1,5 @@
 
-# Collaborative Jamming Scheduler (CJS) API Service
+# 🎵Collaborative Jamming Scheduler (CJS) API Service
 ## Table of Contents
 - [Introduction](#introduction)
 - [Using the API](#using-the-api)
@@ -9,13 +9,13 @@
 - [CRUD Operations](#crud-operations)
 - [Author](#author)
 
-## Introduction
+## 😀Introduction
 
 Welcome to the Collaborative Jamming Scheduler (CJS) API service! Crafted with precision by Marvel Subekti (NIM: 18221058), this service is designed to orchestrate musical jamming sessions seamlessly. Part of the esteemed Sistem dan Teknologi Informasi - Institut Teknologi Bandung, this API lets you create, manage, and participate in jamming sessions with ease.
 
 
 
-## How to Use the API Service
+## ❓How to Use the API Service
 
 ### Using FastAPI Docs
 [click the API Service Docs here](http://tubestst-1-marvel-18221058.hzdnejc5csbscye0.southeastasia.azurecontainer.io/docs#/)
@@ -30,7 +30,7 @@ Welcome to the Collaborative Jamming Scheduler (CJS) API service! Crafted with p
 - Ensure you fill out all the required fields in the request body for POST and PUT requests.
 - Execute the request and observe the response.
 
-### Using Terminal
+### 👩‍💻Using Terminal
 
 #### Read (GET)
 ```bash
@@ -67,7 +67,7 @@ curl -X 'DELETE' \
   -H 'accept: application/json'
 ```
 
-## Using Postman
+## 📮Using Postman
 
 ### Read (GET)
 - Initiate a new request in Postman.
@@ -102,7 +102,7 @@ curl -X 'DELETE' \
 - **Delete:** Implement `DELETE` requests to expunge sessions or participants.
 
 
-## API Reference
+## 🔥API Reference
 
 The API is structured around two main classes, `Session` and `Participant`, and provides endpoints to interact with them. Below are the endpoints and utility functions available.
 
