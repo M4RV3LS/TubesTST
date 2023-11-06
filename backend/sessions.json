@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "host_name": "John Doe",
+    "studio_name": "Downtown Jam",
+    "session_time": "2023-11-06T19:00:00Z",
+    "genre": "Rock",
+    "instruments": ["Guitar", "Drums"],
+    "theme": "80s Rock Hits",
+    "max_participants": 5,
+    "current_participants": 1,
+    "downpayment": 20000,
+    "session_status": "scheduled",
+    "participant": []
+  },
+  {
+    "id": 2,
+    "host_name": "Jane Smith",
+    "studio_name": "City Center Beats",
+    "session_time": "2023-11-08T19:00:00Z",
+    "genre": "Electronic",
+    "instruments": ["Synthesizer", "DJ set"],
+    "theme": null,
+    "max_participants": 10,
+    "current_participants": 1,
+    "downpayment": 5000.0,
+    "session_status": "scheduled",
+    "participant": []
+  },
+  {
+    "id": 3,
+    "host_name": "Marvel",
+    "studio_name": "Soffa studio",
+    "session_time": "2023-11-08T19:00:00Z",
+    "genre": "Jazz",
+    "instruments": ["Synthesizer", "DJ set"],
+    "theme": "jazz 80's",
+    "max_participants": 50,
+    "current_participants": 1,
+    "downpayment": 10000.0,
+    "session_status": "scheduled",
+    "participant": []
+  }
+]
