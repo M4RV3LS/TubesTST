@@ -40,24 +40,23 @@ def save_participants(participants):
     with open("participants.json", "w") as file:
         json.dump(participants, file, indent=4)  # Indent for pretty printing
 
-import json
 
-def load_sessions():
-    try:
-        with open('sessions.json', 'r') as file:
-            return json.load(file)
-    except json.JSONDecodeError as e:
-        # Log error details
-        print(f"JSONDecodeError: {e.msg}")
-        print(f"Error at line {e.lineno}, column {e.colno}")
+# def load_sessions():
+#     try:
+#         with open('sessions.json', 'r') as file:
+#             return json.load(file)
+#     except json.JSONDecodeError as e:
+#         # Log error details
+#         print(f"JSONDecodeError: {e.msg}")
+#         print(f"Error at line {e.lineno}, column {e.colno}")
         
-        # Read the problematic line
-        file.seek(0)
-        lines = file.readlines()
-        error_line = lines[e.lineno - 1]  # Adjust for zero-based index
-        print(f"Error line: {error_line}")
+#         # Read the problematic line
+#         file.seek(0)
+#         lines = file.readlines()
+#         error_line = lines[e.lineno - 1]  # Adjust for zero-based index
+#         print(f"Error line: {error_line}")
 
-        raise
+#         raise
 
 @app.get("/")
 async def read_root():
@@ -166,54 +165,78 @@ async def update_participant(participant_id: int, updated_participant: Participa
         return {"message": "Participant updated successfully"}
     raise HTTPException(status_code=404, detail="Participant not found")
 
-# Delete a participant
 @app.delete("/participants/{participant_id}")
 async def delete_participant(participant_id: int):
-    participants = load_participants()
-    participant_index = next((index for (index, d) in enumerate(participants) if d["id"] == participant_id), None)
-    if participant_index is not None:
+    try:
+        participants = load_participants()
+        participant_index = next((index for (index, d) in enumerate(participants) if d["id"] == participant_id), None)
+        if participant_index is None:
+            raise HTTPException(status_code=404, detail="Participant not found")
+
         # Remove this participant from any sessions they're associated with
         sessions = load_sessions()
         for session in sessions:
-            if participant_id in session['participants']:
+            if participant_id in session.get('participants', []):
                 session['participants'].remove(participant_id)
         save_sessions(sessions)
+
         # Now remove the participant
         participants.pop(participant_index)
         save_participants(participants)
         return {"message": "Participant deleted successfully"}
-    raise HTTPException(status_code=404, detail="Participant not found")
+    except HTTPException as http_exc:
+        # Re-raise the HTTP exception to be handled by FastAPI
+        raise http_exc
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail="An unexpected error occurred")
+
+
 
 @app.put("/sessions/{session_id}/participants/{participant_id}")
 async def add_participant_to_session(session_id: int, participant_id: int):
-    sessions = load_sessions()
-    participants = load_participants()
-    session = next((sess for sess in sessions if sess['id'] == session_id), None)
-    participant = next((part for part in participants if part['id'] == participant_id), None)
+    try:
+        sessions = load_sessions()
+        participants = load_participants()
+        session = next((sess for sess in sessions if sess['id'] == session_id), None)
+        participant = next((part for part in participants if part['id'] == participant_id), None)
 
-    if session and participant:
-        # Check for time conflicts, max participants, etc.
+        if session is None or participant is None:
+            raise HTTPException(status_code=404, detail="Session or Participant not found")
+
+        if 'participants' not in session:
+            session['participants'] = set()
         session['participants'].add(participant_id)
-        participant['sessions'].append(session_id)
+
+        if 'sessions' not in participant:
+            participant['sessions'] = []
+        if session_id not in participant['sessions']:
+            participant['sessions'].append(session_id)
+
         save_sessions(sessions)
         save_participants(participants)
         return {"message": "Participant added to session successfully"}
-    raise HTTPException(status_code=404, detail="Session or Participant not found")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 @app.delete("/sessions/{session_id}/participants/{participant_id}")
 async def remove_participant_from_session(session_id: int, participant_id: int):
-    sessions = load_sessions()
-    participants = load_participants()
-    session = next((sess for sess in sessions if sess['id'] == session_id), None)
-    participant = next((part for part in participants if part['id'] == participant_id), None)
+    try:
+        sessions = load_sessions()
+        participants = load_participants()
+        session = next((sess for sess in sessions if sess['id'] == session_id), None)
+        participant = next((part for part in participants if part['id'] == participant_id), None)
 
-    if session and participant and participant_id in session['participants']:
-        session['participants'].remove(participant_id)
-        participant['sessions'].remove(session_id)
-        save_sessions(sessions)
-        save_participants(participants)
-        return {"message": "Participant removed from session successfully"}
-    raise HTTPException(status_code=404, detail="Session or Participant not found or not associated")
+        if session and participant and participant_id in session.get('participants', []):
+            session['participants'].remove(participant_id)
+            participant['sessions'].remove(session_id)
+            save_sessions(sessions)
+            save_participants(participants)
+            return {"message": "Participant removed from session successfully"}
+        else:
+            raise HTTPException(status_code=404, detail="Session or Participant not found or not associated")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
 
 # List all participants
 @app.get("/participants/", response_model=List[Participant])
@@ -221,16 +244,21 @@ async def list_participants():
     participants = load_participants()
     return participants
 
-# Read all sessions for a single participant
 @app.get("/participants/{participant_id}/sessions", response_model=List[Session])
 async def read_participant_sessions(participant_id: int):
-    sessions = load_sessions()
-    participants = load_participants()
-    # First check if the participant exists
-    participant_exists = any(part['id'] == participant_id for part in participants)
-    if not participant_exists:
-        raise HTTPException(status_code=404, detail="Participant not found")
-    
-    # Now find all sessions that this participant is a part of
-    participant_sessions = [sess for sess in sessions if participant_id in sess['participants']]
-    return participant_sessions
+    try:
+        sessions = load_sessions()
+        participants = load_participants()
+
+        participant = next((part for part in participants if part['id'] == participant_id), None)
+        if participant is None:
+            raise HTTPException(status_code=404, detail="Participant not found")
+
+        participant_sessions = [sess for sess in sessions if participant_id in sess.get('participants', [])]
+        return participant_sessions
+    except HTTPException as he:  # This is to re-raise the 404 error without changing it to 500
+        raise he
+    except Exception as e:
+        # Log the exception here
+        raise HTTPException(status_code=500, detail="Failed to load participant sessions")
+
