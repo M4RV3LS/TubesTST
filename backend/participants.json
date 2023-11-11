@@ -1,9 +1,16 @@
 [
     {
+        "id": 0,
+        "name": "string",
+        "email": "user@example.com",
+        "instrument": "string",
+        "sessions": []
+    },
+    {
         "id": 1,
-        "name": "John Doe",
-        "email": "john.doe@example.com",
-        "instrument": "Guitar",
+        "name": "string",
+        "email": "user@example.com",
+        "instrument": "string",
         "sessions": []
     }
 ]
