@@ -176,6 +176,8 @@ A: This means the resource you're trying to access doesn't exist. Double-check y
 A: You can reach out to the author directly via email or raise an issue in the project's repository.
 
 
+
+
 # 🚀 FastAPI Registration, Login, and Authentication - User Guide
 
 This guide will walk you through the steps to test the login, registration, and authentication features of our FastAPI application, which is containerized and deployed on Microsoft Azure. You can interact with the API using FastAPI's interactive documentation, Postman, or via PowerShell.
