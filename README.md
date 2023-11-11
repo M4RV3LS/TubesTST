@@ -19,6 +19,10 @@ Welcome to the Collaborative Jamming Scheduler (CJS) API service! Crafted with p
 ### Using FastAPI Docs
 [click the API Service Docs here](http://tubestst2.c4d6hxc3gvdqexg2.southeastasia.azurecontainer.io/docs)
 
+## Documentation
+
+[Documentation](https://docs.google.com/document/d/14eSss1uJOFtZJBpz1CMrtTIpAJ-EjZTIdrVaOsAyWEM/edit?usp=sharing)
+
 #### Read Operations
 - Navigate to the CJS API Documentation.
 - Click on the GET operation you want to test (e.g., `/participants/` to list all participants).
@@ -185,6 +189,7 @@ A: You can reach out to the author directly via email or raise an issue in the p
 **Client:** FastApi
 
 **Server:** Microsoft Azure
+
 
 
 ## Authors
