@@ -175,6 +175,102 @@ A: This means the resource you're trying to access doesn't exist. Double-check y
 
 A: You can reach out to the author directly via email or raise an issue in the project's repository.
 
+
+# 🚀 FastAPI Registration, Login, and Authentication - User Guide
+
+This guide will walk you through the steps to test the login, registration, and authentication features of our FastAPI application, which is containerized and deployed on Microsoft Azure. You can interact with the API using FastAPI's interactive documentation, Postman, or via PowerShell.
+
+## Prerequisites
+
+- Access to [FastAPI Docs](http://tubestst2.c4d6hxc3gvdqexg2.southeastasia.azurecontainer.io/docs)
+- [Postman](https://www.postman.com/downloads/) (for API testing)
+- PowerShell (for command-line interactions)
+
+## 📝 Using FastAPI Docs
+
+FastAPI automatically generates interactive documentation for your API. You can use this to test the API endpoints directly from your browser.
+
+### 1. Open FastAPI Documentation
+
+Navigate to [FastAPI Docs](http://tubestst2.c4d6hxc3gvdqexg2.southeastasia.azurecontainer.io/docs).
+
+### 2. Register a New User
+
+- Click on the `/register/` endpoint.
+- Click `Try it out`, enter the required user details, and then click `Execute`.
+- You should receive a response indicating successful registration.
+
+### 3. Login
+
+- Find the `/token/` endpoint.
+- Again, click `Try it out`. Use the same credentials you registered with and click `Execute`.
+- You will receive a JWT token in the response.
+
+### 4. Access Protected Endpoints
+
+- Copy the JWT token from the login response.
+- For any protected endpoint, click the `Authorize` button at the top of the docs and paste your token.
+- Now you can `Try out` protected endpoints with your authenticated user.
+
+## 📫 Using Postman
+
+Postman is a popular tool for API testing. You can use it to send requests to your API and view the responses.
+
+### 1. Set Up
+
+Open Postman and create a new request.
+
+### 2. Register a New User
+
+- Set the request type to `POST` and the URL to `http://tubestst2.c4d6hxc3gvdqexg2.southeastasia.azurecontainer.io/register/`.
+- In the `Body` tab, select `raw` and `JSON`, then input the user details in JSON format.
+- Send the request and check the response.
+
+### 3. Login
+
+- Change the URL to `http://tubestst2.c4d6hxc3gvdqexg2.southeastasia.azurecontainer.io/token/`.
+- Send the login credentials. Save the JWT token from the response.
+
+### 4. Test Authenticated Requests
+
+- For any protected endpoint, add an `Authorization` header with the value `Bearer <your_token>`.
+- Send your request to the protected endpoint.
+
+## 💻 Using PowerShell
+
+For those who prefer using the command line, PowerShell can be used to make HTTP requests to the API.
+
+### 1. Register a New User
+
+```powershell
+$body = @{
+    email = 'your_email@example.com'
+    password = 'your_password'
+} | ConvertTo-Json
+
+Invoke-RestMethod -Uri 'http://tubestst2.c4d6hxc3gvdqexg2.southeastasia.azurecontainer.io/register/' -Method Post -Body $body -ContentType 'application/json'
+```
+
+### 2. Login
+```powershell
+$loginBody = @{
+    username = 'your_email@example.com'
+    password = 'your_password'
+} | ConvertTo-Json
+
+$response = Invoke-RestMethod -Uri 'http://tubestst2.c4d6hxc3gvdqexg2.southeastasia.azurecontainer.io/token/' -Method Post -Body $loginBody -ContentType 'application/x-www-form-urlencoded'
+$token = $response.access_token
+```
+
+### 3. Access Protected Endpoints
+```powershell
+$headers = @{
+    Authorization = "Bearer $token"
+}
+
+Invoke-RestMethod -Uri 'http://tubestst2.c4d6hxc3gvdqexg2.southeastasia.azurecontainer.io/protected-endpoint/' -Method Get -Headers $headers
+```
+
 ## Skills Required 🛠️
 
 - **FastAPI**: Knowledge of FastAPI framework for building APIs.
@@ -187,7 +283,6 @@ A: You can reach out to the author directly via email or raise an issue in the p
 ## Tech Stack
 
 **Client:** FastApi
-
 **Server:** Microsoft Azure
 
 
