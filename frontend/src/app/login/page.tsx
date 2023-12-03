@@ -28,7 +28,8 @@ export default function Login() {
       );
 
       console.log("Login successful", response.data);
-      // Redirect or perform state update
+      // Redirect to the user dashboard page
+      window.location.href = "/user-dashboard";
     } catch (error) {
       console.error("Login error:", error);
     }
@@ -92,7 +93,7 @@ export default function Login() {
         <p className="mt-4 text-sm text-center text-gray-700">
           Dont have an account?{" "}
           <Link href="/signup">
-            <a className="font-medium text-blue-600 hover:underline">Sign up</a>
+            <span className="font-medium text-blue-600 hover:underline">Sign up</span>
           </Link>
         </p>
       </div>

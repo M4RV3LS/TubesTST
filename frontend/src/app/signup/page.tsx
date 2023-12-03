@@ -14,14 +14,25 @@ export default function Signup() {
 
   async function handleSignup(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    const formData = {
+      username: username,
+      password: password,
+      email: email,
+      full_name: fullName,
+    };
+
+    console.log(formData); // Now you can log formData as it's a regular object
 
     try {
-      const response = await axios.post("http://localhost:8000/register", {
-        username,
-        password,
-        email,
-        full_name: fullName,
-      });
+      const response = await axios.post(
+        "http://localhost:8000/register",
+        formData,
+        {
+          headers: {
+            "Content-Type": "application/json", // Set header for JSON
+          },
+        }
+      );
 
       console.log("Signup successful", response.data);
       // Redirect or perform state update
@@ -120,7 +131,9 @@ export default function Signup() {
         <p className="mt-4 text-sm text-center text-gray-700">
           Already have an account?{" "}
           <Link href="/login">
-            <a className="font-medium text-blue-600 hover:underline">Login</a>
+            <span className="font-medium text-blue-600 hover:underline">
+              Login
+            </span>
           </Link>
         </p>
       </div>

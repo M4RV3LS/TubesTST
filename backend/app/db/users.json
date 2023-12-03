@@ -33,5 +33,19 @@
         "full_name": "martim subekti",
         "disabled": false,
         "hashed_password": "fakehashed12345678"
+    },
+    "jodi": {
+        "username": "jodi",
+        "email": "jodi@gmail.com",
+        "full_name": "benyamin jodi",
+        "disabled": false,
+        "hashed_password": "fakehashed12345678"
+    },
+    "lim ": {
+        "username": "lim ",
+        "email": "lim@gmail.com",
+        "full_name": "reinhart lim",
+        "disabled": false,
+        "hashed_password": "fakehashed12345678"
     }
 }

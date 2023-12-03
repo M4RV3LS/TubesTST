@@ -1,7 +1,8 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr
 from typing import Optional, Set
 from uuid import uuid4
 import random
+
 
 class User(BaseModel):
     username: str
@@ -37,3 +38,10 @@ class Session(BaseModel):
             downpayment=random.randint(50, 500),  # Random downpayment between 50 and 500
             participants=[]  # Initialize as an empty list
         )
+
+#model for register User
+class UserRegister(BaseModel):
+    username: str
+    password: str
+    email: EmailStr = None
+    full_name: Optional[str] = None
