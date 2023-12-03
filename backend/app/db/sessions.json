@@ -1,0 +1,15 @@
+[
+    {
+        "id": "2b62efa7-8e40-495a-9538-c913a7671e5e",
+        "host_name": "marvel",
+        "studio_name": "Rock On Studios",
+        "session_time": "2022-12-03T14:00:00Z",
+        "genre": "Rock",
+        "theme": "80's Rock Anthems",
+        "max_participants": 5,
+        "downpayment": 365,
+        "participants": [
+            "timothy"
+        ]
+    }
+]

@@ -1,0 +1,37 @@
+{
+    "johndoe": {
+        "username": "johndoe",
+        "full_name": "John Doe",
+        "email": "johndoe@example.com",
+        "hashed_password": "fakehashedsecret",
+        "disabled": false
+    },
+    "alice": {
+        "username": "alice",
+        "full_name": "Alice Wonderson",
+        "email": "alice@example.com",
+        "hashed_password": "fakehashedsecret2",
+        "disabled": true
+    },
+    "marvel": {
+        "username": "marvel",
+        "email": "marvel@gmail.com",
+        "full_name": "marvel subekti",
+        "disabled": false,
+        "hashed_password": "fakehashed12345678"
+    },
+    "timothy": {
+        "username": "timothy",
+        "email": "timothy@gmail.com",
+        "full_name": "timothy subekti",
+        "disabled": false,
+        "hashed_password": "fakehashed12345678"
+    },
+    "martim": {
+        "username": "martim",
+        "email": "martim@gmail.com",
+        "full_name": "martim subekti",
+        "disabled": false,
+        "hashed_password": "fakehashed12345678"
+    }
+}
