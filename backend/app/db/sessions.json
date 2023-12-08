@@ -11,5 +11,109 @@
         "participants": [
             "timothy"
         ]
+    },
+    {
+        "id": "e1348579-d12e-4904-a18e-b7a3959a6bd2",
+        "host_name": "marvel",
+        "studio_name": "Studio 12",
+        "session_date": "10/10/2023",
+        "session_time": "00:00 - 02:00",
+        "genre": "Jazz",
+        "theme": "Jazz 80",
+        "max_participants": 10,
+        "downpayment": 209,
+        "participants": [],
+        "total_fee": 20000
+    },
+    {
+        "id": "6c5df2e0-67d2-44bb-820f-d163c40cea8d",
+        "host_name": "marvel",
+        "studio_name": "Studio 12",
+        "session_date": "10/10/2022",
+        "session_time": "12:00 - 14:00",
+        "genre": "Jazz",
+        "theme": "Jazz80",
+        "max_participants": 10,
+        "downpayment": 221,
+        "participants": [],
+        "total_fee": 100
+    },
+    {
+        "id": "485558dc-cc25-4e07-8ee4-ab9ba513d942",
+        "host_name": "marvel",
+        "studio_name": "Studio 12",
+        "session_date": "10/10/2022",
+        "session_time": "12:00 - 14:00",
+        "genre": "Jazz",
+        "theme": "Jazz80",
+        "max_participants": 10,
+        "downpayment": 311,
+        "participants": [],
+        "total_fee": 100
+    },
+    {
+        "id": "1f1941ca-8a8e-4347-9d7e-b8477679b573",
+        "host_name": "marvel",
+        "studio_name": "Dhanas Studio",
+        "session_date": "2023-12-07",
+        "session_time": "00:00 - 02:00",
+        "genre": "Jazz",
+        "theme": "Jazz80",
+        "max_participants": 80,
+        "downpayment": 289,
+        "participants": [],
+        "total_fee": 210000
+    },
+    {
+        "id": "9fedaf8f-e6ef-4caf-8061-afd3e6ecf8a2",
+        "host_name": "marvel",
+        "studio_name": "Dhanas Studio",
+        "session_date": "2023-12-07",
+        "session_time": "00:00 - 02:00",
+        "genre": "Jazz",
+        "theme": "Jazz80",
+        "max_participants": 80,
+        "downpayment": 291,
+        "participants": [],
+        "total_fee": 210000
+    },
+    {
+        "id": "c381f01b-9e4f-4a16-a839-477266b1b041",
+        "host_name": "marvel",
+        "studio_name": "Dhanas Studio",
+        "session_date": "2023-12-07",
+        "session_time": "00:00 - 02:00",
+        "genre": "Jazz",
+        "theme": "Jazz80",
+        "max_participants": 80,
+        "downpayment": 178,
+        "participants": [],
+        "total_fee": 210000
+    },
+    {
+        "id": "f873f7b9-b67f-4053-bc3b-c7dfccac2bd2",
+        "host_name": "marvel",
+        "studio_name": "Dhanas Studio",
+        "session_date": "2023-12-07",
+        "session_time": "00:00 - 02:00",
+        "genre": "Jazz",
+        "theme": "Jazz80",
+        "max_participants": 80,
+        "downpayment": 454,
+        "participants": [],
+        "total_fee": 250000
+    },
+    {
+        "id": "a75759a5-176f-4c29-a1e5-84832314224d",
+        "host_name": "marvel",
+        "studio_name": "Dhanas Studio",
+        "session_date": "2023-12-07",
+        "session_time": "02:00 - 04:00",
+        "genre": "Jazz",
+        "theme": "Jazz80",
+        "max_participants": 10,
+        "downpayment": 425,
+        "participants": [],
+        "total_fee": 210000
     }
 ]

@@ -1,51 +1,16 @@
 {
-    "johndoe": {
-        "username": "johndoe",
-        "full_name": "John Doe",
-        "email": "johndoe@example.com",
-        "hashed_password": "fakehashedsecret",
-        "disabled": false
-    },
-    "alice": {
-        "username": "alice",
-        "full_name": "Alice Wonderson",
-        "email": "alice@example.com",
-        "hashed_password": "fakehashedsecret2",
-        "disabled": true
+    "marvelnew": {
+        "username": "marvelnew",
+        "email": "marvelnew@gmail.com",
+        "full_name": "marvelnew",
+        "disabled": false,
+        "hashed_password": "$2b$12$pT7y1OWIPYD000X1xXaWduXRIcwzYyyDbqpKltQJeUXDE0LLsl/T."
     },
     "marvel": {
         "username": "marvel",
-        "email": "marvel@gmail.com",
+        "email": "marvel@example.com",
         "full_name": "marvel subekti",
         "disabled": false,
-        "hashed_password": "fakehashed12345678"
-    },
-    "timothy": {
-        "username": "timothy",
-        "email": "timothy@gmail.com",
-        "full_name": "timothy subekti",
-        "disabled": false,
-        "hashed_password": "fakehashed12345678"
-    },
-    "martim": {
-        "username": "martim",
-        "email": "martim@gmail.com",
-        "full_name": "martim subekti",
-        "disabled": false,
-        "hashed_password": "fakehashed12345678"
-    },
-    "jodi": {
-        "username": "jodi",
-        "email": "jodi@gmail.com",
-        "full_name": "benyamin jodi",
-        "disabled": false,
-        "hashed_password": "fakehashed12345678"
-    },
-    "lim ": {
-        "username": "lim ",
-        "email": "lim@gmail.com",
-        "full_name": "reinhart lim",
-        "disabled": false,
-        "hashed_password": "fakehashed12345678"
+        "hashed_password": "$2b$12$CtfPBPtHgbhWp4Lx4NQuLeK4h.uLB/1ytZbflpl1gLa3fCFhZ4f9W"
     }
 }

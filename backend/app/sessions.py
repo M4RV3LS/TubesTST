@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException, Depends, Body
-from models import User, Session
+from models import User, Session, CreateSessionModel
 from utilities import get_sessions_db, write_sessions_db
 from auth import get_current_active_user
 from typing import Optional, Set
@@ -10,21 +10,19 @@ router = APIRouter()
 #Membuat sebuah music jamming session
 @router.post("/", response_model=Session)
 async def create_session(
-    studio_name: str,
-    session_time: str,
-    genre: Optional[str] = None,
-    theme: Optional[str] = None,
-    max_participants: int = Body(...),  # Removed gt=0 to accept user input
+    session_data: CreateSessionModel,  # Use the new model here
     current_user: User = Depends(get_current_active_user)
 ):
-    # Assume Session.create is a method that initializes a Session instance
+    # Use the fields from session_data now
     new_session = Session.create(
         host_name=current_user.username,
-        studio_name=studio_name,
-        session_time=session_time,
-        genre=genre,
-        theme=theme,
-        max_participants=max_participants
+        studio_name=session_data.studio_name,
+        session_date=session_data.session_date,
+        session_time=session_data.session_time,
+        genre=session_data.genre,
+        theme=session_data.theme,
+        max_participants=session_data.max_participants,
+        total_fee=session_data.total_fee
     )
     sessions = get_sessions_db()
     sessions.append(new_session.dict())

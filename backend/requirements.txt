@@ -1,4 +1,6 @@
 fastapi
 uvicorn[standard]
 python-multipart
+requests==2.31.0
+
 # other dependencies if there are any

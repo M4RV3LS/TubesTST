@@ -1,0 +1,1 @@
+{"customization": [{"custom_id": 1, "order_id": 1, "customer_id": 1, "menu_id": 1, "ingredient_id": 2, "adjusted_quantity": 20.0}, {"custom_id": 2, "order_id": 1, "customer_id": 1, "menu_id": 1, "ingredient_id": 4, "adjusted_quantity": 0.5}, {"custom_id": 3, "order_id": 2, "customer_id": 2, "menu_id": 1, "ingredient_id": 3, "adjusted_quantity": 10.0}]}

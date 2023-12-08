@@ -1,0 +1,37 @@
+[
+  {
+    "custom_id": 1,
+    "ingredients": [
+      {
+        "ingredient_id": 2,
+        "adjusted_quantity": 20.0
+      },
+      {
+        "ingredient_id": 4,
+        "adjusted_quantity": 0.5
+      }
+    ],
+    "order_id": 1
+  },
+  {
+    "custom_id": 2,
+    "ingredients": [
+      {
+        "ingredient_id": 3,
+        "adjusted_quantity": 10.0
+      }
+    ],
+    "order_id": 2
+  },
+  {
+    "custom_id": 3,
+    "Ingredients": [
+      {
+        "custom_id": 0,
+        "ingredient_id": 2,
+        "adjusted_quantity": 100.0
+      }
+    ],
+    "order_id": 1
+  }
+]
