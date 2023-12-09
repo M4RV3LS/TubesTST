@@ -29,6 +29,7 @@ class Menu_Item(BaseModel):
 	calories: float
 	level: str
 	description: str
+	menu_url: str
 
 json_filename="data/menu_items.json"
 json_filename1="data/ingredients.json"
@@ -50,7 +51,7 @@ menu_stack.push(data['menu_items'])  # Initial state
 router = APIRouter(tags=["Menu"])
 
 @router.get('/')
-async def read_all_menu(sort_by: str = None, user: User = Depends(get_current_user)):
+async def read_all_menu(sort_by: str = None):
     menu_items = menu_stack.items[-1]
 
     if sort_by:
@@ -63,18 +64,8 @@ async def read_all_menu(sort_by: str = None, user: User = Depends(get_current_us
 
     return menu_items
 
-# @router.get('/{menu_id}')
-# async def read_menu(menu_id: int, user: User = Depends(get_current_user)):
-# 	for menu_item in data['menu_items']:
-# 		print(menu_item)
-# 		if menu_item['menu_id'] == menu_id:
-# 			return menu_item
-# 	raise HTTPException(
-# 		status_code=404, detail=f'Menu not found!'
-# 	)
-
 @router.get('/check/{menu_id}')
-async def check_menu(menu_id: int, user: User = Depends(get_current_user)):
+async def check_menu(menu_id: int):
 	menu_found = False
 	for menu_item in data['menu_items']:
 		print(menu_item)
@@ -145,7 +136,7 @@ async def delete_menu(menu_id: int, user: User = Depends(get_current_user)):
 	)
 
 @router.get('/{menu_id}')
-async def read_menu(menu_id: int, user: User = Depends(get_current_user)):
+async def read_menu(menu_id: int):
     menu_item = next((item for item in data['menu_items'] if item['menu_id'] == menu_id), None)
 
     if menu_item is None:
@@ -174,6 +165,7 @@ async def read_menu(menu_id: int, user: User = Depends(get_current_user)):
         'calories': menu_item['calories'],
         'level': menu_item['level'],
         'description': menu_item['description'],
+		'menu_url': menu_item['menu_url'],
         'ingredients': ingredients_list
     }
 

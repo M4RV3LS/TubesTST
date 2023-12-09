@@ -5,10 +5,20 @@ from composition import router as composition_router
 from customization import router as customization_router
 from authentication import router as authentication_router
 from order import router as order_router
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
     docs_url="/docs",
     redoc_url="/redoc"
+)
+
+# Configure CORS (Cross-Origin Resource Sharing)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Adjust this based on your frontend's domain
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 if __name__ == "__main__":

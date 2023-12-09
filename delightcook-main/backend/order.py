@@ -12,8 +12,6 @@ class Order_Item(BaseModel):
 	customer_id: int
 	menu_id: int
 	menu_quantity: int
- 
-
 
 json_filename = "data/order.json"
 

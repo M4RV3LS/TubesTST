@@ -10,11 +10,11 @@ from authentication import *
 from typing import List
 
 class Ingredient(BaseModel):
-    custom_id: int
     ingredient_id: int
     adjusted_quantity: float
 
 class Customization_Item(BaseModel):
+    custom_id: int
     Ingredients: List[Ingredient]
     order_id: int
 
@@ -47,8 +47,6 @@ async def create_customization(customization_item: Customization_Item, user: Use
         json.dump(data, write_file, indent=2)
 
     return new_customization
-
-
 
 # @router.get('/order/{order_id}')
 # async def read_order_customization(order_id: int, user: User = Depends(get_current_user)):

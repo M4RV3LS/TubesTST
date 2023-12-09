@@ -91,7 +91,6 @@ async def create_user(username: str, password: str):
     write_data(data)
     return {'message': 'User created successfully', 'customer_id': user_id}
 
-
 @router.get('/users/me')
 async def get_user(user: User = Depends(get_current_user)):
     return {'customer_id': user.customer_id, 'username': user.username, 'role': 'admin'}

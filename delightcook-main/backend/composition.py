@@ -29,7 +29,7 @@ async def read_all_composition(user: User = Depends(get_current_user)):
     return data['composition']
 
 @router.get('/menu/{menu_id}')
-async def read_menu_composition(menu_id: int, user: User = Depends(get_current_user)):
+async def read_menu_composition(menu_id: int):
     list_composition = []
     menu_found = 0
     for composition_item in data['composition']:
@@ -45,7 +45,7 @@ async def read_menu_composition(menu_id: int, user: User = Depends(get_current_u
         )
 
 @router.get('/ingredient/{ingredient_id}')
-async def read_menu_with_this_ingredient(ingredient_id: int, user: User = Depends(get_current_user)):
+async def read_menu_with_this_ingredient(ingredient_id: int):
     list_composition = []
     ingredient_found = 0
     for composition_item in data['composition']:

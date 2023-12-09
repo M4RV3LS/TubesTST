@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 export default function Menu(){
     return(
         <ChakraProvider>
-            <Navbar status={false} />
+            <Navbar status={true} />
             <Box
               backgroundImage={"./landing.png"}
               backgroundSize={'contain'}
@@ -47,7 +47,7 @@ export default function Menu(){
                     rounded={'20px'}
                     width={'40%'}
                 >
-                    <a href="./menu-public">See Menus</a>
+                    <a href="./menu">See Menus</a>
                 </Button>
               </Box>
             </Box>

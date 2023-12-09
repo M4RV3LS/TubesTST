@@ -60,7 +60,6 @@ async def add_ingredient(item: Ingredient_Item, user: User = Depends(get_current
 
     return new_ingredient_item
 
-
 @router.put('/')
 async def update_ingredient(item: Ingredient_Item, user: User = Depends(get_current_user)):
 	item_dict = item.dict()

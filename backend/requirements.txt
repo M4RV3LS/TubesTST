@@ -2,5 +2,7 @@ fastapi
 uvicorn[standard]
 python-multipart
 requests==2.31.0
-
+email-validator
+PyJWT
+bcrypt
 # other dependencies if there are any

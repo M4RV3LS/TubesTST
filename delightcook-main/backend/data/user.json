@@ -1,24 +1,34 @@
 {
-  "user": [
-    {
-      "customer_id": 1,
-      "username": "Justine",
-      "password_hash": "$2b$12$0fmJEr7Zenfk9MiWKggOo.QTBIeY3wh3SPF3CGajocC3xxGY0vV7."
-    },
-    {
-      "customer_id": 2,
-      "username": "Christina",
-      "password_hash": "$2b$12$AT.AbcE6PX4Ktymq3hlaPedr/lL2ArmER/bODXAIeRyGgxI8scnBG"
-    },
-    {
-      "customer_id": 3,
-      "username": "marvel",
-      "password_hash": "$2b$12$tr0xShvEQxZWojHyw7g7DuOq57KkoDYJx5o9sDjEL3Ga5wEp8.mw2"
-    },
-    {
-      "customer_id": 4,
-      "username": "timothy",
-      "password_hash": "$2b$12$Dd/F1pPEMku4xK9eTqsoCOdilX3IBx5nzXHVf1kQg74dtZ5GdxK4m"
-    }
-  ]
+    "user": [
+        {
+            "customer_id": 1,
+            "username": "Justine",
+            "password_hash": "$2b$12$0fmJEr7Zenfk9MiWKggOo.QTBIeY3wh3SPF3CGajocC3xxGY0vV7."
+        },
+        {
+            "customer_id": 2,
+            "username": "Christina",
+            "password_hash": "$2b$12$AT.AbcE6PX4Ktymq3hlaPedr/lL2ArmER/bODXAIeRyGgxI8scnBG"
+        },
+        {
+            "customer_id": 3,
+            "username": "marvel",
+            "password_hash": "$2b$12$tr0xShvEQxZWojHyw7g7DuOq57KkoDYJx5o9sDjEL3Ga5wEp8.mw2"
+        },
+        {
+            "customer_id": 4,
+            "username": "timothy",
+            "password_hash": "$2b$12$Dd/F1pPEMku4xK9eTqsoCOdilX3IBx5nzXHVf1kQg74dtZ5GdxK4m"
+        },
+        {
+            "customer_id": 5,
+            "username": "Tes",
+            "password_hash": "$2b$12$VoLWLkVSQ0iSh7KYWjEoXu/20DTsm3oBgXSpGLTGaUC6ZIDuj1XaO"
+        },
+        {
+            "customer_id": 6,
+            "username": "TST",
+            "password_hash": "$2b$12$6Uh9XWUTNGfo4cS.rkWxmOYbKxB97j8muOZsmHH4aqUWtOax5H0Gq"
+        }
+    ]
 }

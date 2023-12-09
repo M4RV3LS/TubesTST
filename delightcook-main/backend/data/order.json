@@ -3,17 +3,20 @@
         {
             "order_id": 1,
             "customer_id": 1,
-            "menu_id": 1
+            "menu_id": 1,
+            "menu_quantity": 10
         },
         {
             "order_id": 2,
             "customer_id": 2,
-            "menu_id": 1
+            "menu_id": 1,
+            "menu_quantity": 2
         },
         {
             "order_id": 3,
             "customer_id": 3,
-            "menu_id": 1
+            "menu_id": 1,
+            "menu_quantity": 1
         },
         {
             "order_id": 4,
@@ -26,18 +29,6 @@
             "customer_id": 3,
             "menu_id": 4,
             "menu_quantity": 20
-        },
-        {
-            "order_id": 6,
-            "customer_id": 3,
-            "menu_id": 3,
-            "menu_quantity": 5
-        },
-        {
-            "order_id": 7,
-            "customer_id": 3,
-            "menu_id": 1,
-            "menu_quantity": 5
         }
     ]
 }

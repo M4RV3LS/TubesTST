@@ -2,7 +2,7 @@ import requests
 
 # DELIGHT_COOK_TOKEN_URL = "http://127.0.0.1:8080/token"
 
-DELIGHT_COOK_BASE_URL = "http://127.0.0.1:8080"  
+DELIGHT_COOK_BASE_URL = "http://backenddelightcook.dtemg6gpcec2b0cy.southeastasia.azurecontainer.io"  
 
 def get_token():
     token_response = requests.post(f"{DELIGHT_COOK_BASE_URL}/token", data={
